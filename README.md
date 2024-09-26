@@ -1,16 +1,8 @@
-# mitra_surya_jaya_clean
+# Mitra Surya Jaya
 
-A new Flutter project.
+Improvise current Mitra Surya Jaya mobile app into better app with clean architecture and separation of concern.
 
-## Getting Started
+## Tech Stack
+Develop with passion with this tools :
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Tech Stack](https://github-readme-tech-stack.vercel.app/api/cards?title=Tech+Stack&align=center&titleAlign=center&lineCount=2&width=525&line1=flutter%2Cflutter%2C2b9fc0%3Bdata%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI%2FPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDIwMDEwOTA0Ly9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9UUi8yMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI%2BCjxzdmcgdmVyc2lvbj0iMS4wIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiB3aWR0aD0iMjI1LjAwMDAwMHB0IiBoZWlnaHQ9IjIyNS4wMDAwMDBwdCIgdmlld0JveD0iMCAwIDIyNS4wMDAwMDAgMjI1LjAwMDAwMCIKIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiPgoKPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAwMDAsMjI1LjAwMDAwMCkgc2NhbGUoMC4xMDAwMDAsLTAuMTAwMDAwKSIKZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSJub25lIj4KPHBhdGggZD0iTTE3NzAgMTM3MCBjLTEyMSAtMzIgLTE5MCAtNzIgLTE5MCAtMTExIDAgLTkgMTYgLTM2IDM1IC01OSAyMCAtMjMKMzUgLTUzIDM1IC02NyAwIC01OSAtOTkgLTEwNyAtMzI2IC0xNTcgLTEyOCAtMjggLTIxMyAtNjEgLTI3OCAtMTA1IC0xNjIKLTExMSAtMTM1IC0yNTQgNzAgLTM3MyAxNDYgLTg1IDE5MCAtOTIgMzA4IC00NyAxMzkgNTIgMjcyIDE3MiAzNDEgMzA4IDU3CjExMyA2NiAxNjUgNzIgMzg2IDMgMTEwIDQgMjEwIDIgMjIxIC00IDIyIC00IDIyIC02OSA0eiIvPgo8L2c%2BCjwvc3ZnPgo%3D%2Criverpod%2C%3Bfirebase%2Cfirebase%2Cff7200%3Bdart%2Cdart%2C001aff%3B&line2=node.js%2Cnode.js%2C15ff69%3Bexpress%2Cexpress.js%2C3dff00%3Bpostgresql%2Cpostgresql%2C0024ff%3Bjavascript%2Cjavascript%2Ce0ff00%3B)

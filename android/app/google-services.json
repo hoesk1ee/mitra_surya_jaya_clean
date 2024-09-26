@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "920786376664",
+    "project_id": "mitra-surya-jaya-clean",
+    "storage_bucket": "mitra-surya-jaya-clean.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:920786376664:android:4a6970b8f08ca817bac4ad",
+        "android_client_info": {
+          "package_name": "com.hoeskieedev.mitra_surya_jaya_clean"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmaKTxCPCvobM2guQajYXTtMn5IYTyqbE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

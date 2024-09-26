@@ -13,7 +13,7 @@ class DummyAuthentication implements Authentication {
       {required String email, required String password}) async {
     await Future.delayed(const Duration(seconds: 2));
 
-    return const Result.failed('Gagal Login!');
+    return const Result.success("ID-1231");
   }
 
   @override

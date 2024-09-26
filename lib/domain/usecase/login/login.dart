@@ -6,6 +6,7 @@ import 'package:mitra_surya_jaya_clean/domain/usecase/usecase.dart';
 
 part 'login_params.dart';
 
+// * Actual UseCase, so this is what system will do when we run the authentication and then get the result data.
 class Login implements UseCase<Result<User>, LoginParams> {
   final Authentication authentication;
   final UserRepository userRepository;

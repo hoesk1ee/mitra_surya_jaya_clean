@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCpbszQ7oA1PRNUDGCiSyI1u74OVy9QbnY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>920786376664</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.mitraSuryaJayaClean</string>
+	<key>PROJECT_ID</key>
+	<string>mitra-surya-jaya-clean</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mitra-surya-jaya-clean.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:920786376664:ios:24fe75d9a9f487afbac4ad</string>
+</dict>
+</plist>

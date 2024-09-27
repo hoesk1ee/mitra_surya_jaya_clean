@@ -1,4 +1,3 @@
-import 'package:mitra_surya_jaya_clean/domain/entities/product/product.dart';
 import 'package:mitra_surya_jaya_clean/domain/entities/product/product_list.dart';
 import 'package:mitra_surya_jaya_clean/domain/entities/result.dart';
 

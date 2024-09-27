@@ -14,6 +14,7 @@ class MsjCategoryData implements CategoryRepository {
   @override
   Future<Result<String>> addCategory(
       {required String categoryPic, required String categoryName}) async {
+    // ! TODO : Implement this later
     throw UnimplementedError();
   }
 

@@ -23,7 +23,7 @@ mixin _$User {
   @JsonKey(name: "user_id")
   String get userId => throw _privateConstructorUsedError;
   @JsonKey(name: "photo_url")
-  String get photoUrl => throw _privateConstructorUsedError;
+  String? get photoUrl => throw _privateConstructorUsedError;
   @JsonKey(name: "user_role")
   String get userRole => throw _privateConstructorUsedError;
   @JsonKey(name: "user_name")
@@ -50,7 +50,7 @@ abstract class $UserCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: "user_id") String userId,
-      @JsonKey(name: "photo_url") String photoUrl,
+      @JsonKey(name: "photo_url") String? photoUrl,
       @JsonKey(name: "user_role") String userRole,
       @JsonKey(name: "user_name") String userName,
       @JsonKey(name: "phone_number") String phoneNumber,
@@ -74,7 +74,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   @override
   $Res call({
     Object? userId = null,
-    Object? photoUrl = null,
+    Object? photoUrl = freezed,
     Object? userRole = null,
     Object? userName = null,
     Object? phoneNumber = null,
@@ -86,10 +86,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
-      photoUrl: null == photoUrl
+      photoUrl: freezed == photoUrl
           ? _value.photoUrl
           : photoUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       userRole: null == userRole
           ? _value.userRole
           : userRole // ignore: cast_nullable_to_non_nullable
@@ -123,7 +123,7 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: "user_id") String userId,
-      @JsonKey(name: "photo_url") String photoUrl,
+      @JsonKey(name: "photo_url") String? photoUrl,
       @JsonKey(name: "user_role") String userRole,
       @JsonKey(name: "user_name") String userName,
       @JsonKey(name: "phone_number") String phoneNumber,
@@ -144,7 +144,7 @@ class __$$UserImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? userId = null,
-    Object? photoUrl = null,
+    Object? photoUrl = freezed,
     Object? userRole = null,
     Object? userName = null,
     Object? phoneNumber = null,
@@ -156,10 +156,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
-      photoUrl: null == photoUrl
+      photoUrl: freezed == photoUrl
           ? _value.photoUrl
           : photoUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       userRole: null == userRole
           ? _value.userRole
           : userRole // ignore: cast_nullable_to_non_nullable
@@ -189,7 +189,7 @@ class __$$UserImplCopyWithImpl<$Res>
 class _$UserImpl implements _User {
   const _$UserImpl(
       {@JsonKey(name: "user_id") required this.userId,
-      @JsonKey(name: "photo_url") required this.photoUrl,
+      @JsonKey(name: "photo_url") this.photoUrl,
       @JsonKey(name: "user_role") required this.userRole,
       @JsonKey(name: "user_name") required this.userName,
       @JsonKey(name: "phone_number") required this.phoneNumber,
@@ -204,7 +204,7 @@ class _$UserImpl implements _User {
   final String userId;
   @override
   @JsonKey(name: "photo_url")
-  final String photoUrl;
+  final String? photoUrl;
   @override
   @JsonKey(name: "user_role")
   final String userRole;
@@ -268,7 +268,7 @@ class _$UserImpl implements _User {
 abstract class _User implements User {
   const factory _User(
           {@JsonKey(name: "user_id") required final String userId,
-          @JsonKey(name: "photo_url") required final String photoUrl,
+          @JsonKey(name: "photo_url") final String? photoUrl,
           @JsonKey(name: "user_role") required final String userRole,
           @JsonKey(name: "user_name") required final String userName,
           @JsonKey(name: "phone_number") required final String phoneNumber,
@@ -283,7 +283,7 @@ abstract class _User implements User {
   String get userId;
   @override
   @JsonKey(name: "photo_url")
-  String get photoUrl;
+  String? get photoUrl;
   @override
   @JsonKey(name: "user_role")
   String get userRole;

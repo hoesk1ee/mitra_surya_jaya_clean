@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mitra_surya_jaya_clean/data/dummies/dummy_authentication.dart';
-import 'package:mitra_surya_jaya_clean/data/dummies/dummy_user_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mitra_surya_jaya_clean/domain/usecase/login/login.dart';
 import 'package:mitra_surya_jaya_clean/presentation/pages/main_page.dart';

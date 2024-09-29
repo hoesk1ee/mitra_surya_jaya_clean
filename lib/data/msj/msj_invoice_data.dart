@@ -3,6 +3,7 @@ import 'package:mitra_surya_jaya_clean/data/repositories/invoice_repository.dart
 import 'package:mitra_surya_jaya_clean/domain/entities/base_response.dart';
 import 'package:mitra_surya_jaya_clean/domain/entities/invoice/customer_invoice.dart';
 import 'package:mitra_surya_jaya_clean/domain/entities/invoice/invoice.dart';
+import 'package:mitra_surya_jaya_clean/domain/entities/invoice/invoice_summary.dart';
 import 'package:mitra_surya_jaya_clean/domain/entities/invoice/list_invoice_item.dart';
 import 'package:mitra_surya_jaya_clean/domain/entities/result.dart';
 
@@ -14,27 +15,76 @@ class MsjInvoiceData implements InvoiceRepository {
   final Options _options = Options(contentType: 'application/json');
 
   @override
-  Future<Result<String>> addInvoice(
-      {required int customerId,
+  Future<Result<InvoiceSummary>> addInvoice(
+      {int? customerId,
       required String invoiceType,
       required String totalPrice,
       required String userId,
-      required String note}) {
-    // TODO: implement addInvoice
-    throw UnimplementedError();
+      required String note}) async {
+    try {
+      final response = await _dio!.post(
+        'http://192.168.18.46:3000/add-invoice',
+        data: {
+          "customerId": customerId,
+          "invoiceType": invoiceType,
+          "totalPrice": totalPrice,
+          "userId": userId,
+          "note": note,
+        },
+        options: _options,
+      );
+
+      if (response.statusCode == 201) {
+        var result = Map<String, dynamic>.from(response.data);
+        return Result.success(InvoiceSummary.fromJson(result));
+      } else {
+        var baseResponse = BaseResponse.fromJson(response.data);
+        return Result.failed(baseResponse.message);
+      }
+    } on DioException catch (e) {
+      return Result.failed("${e.message}");
+    }
   }
 
   @override
   Future<Result<CustomerInvoice>> getCustomerInvoice(
-      {required int customerId}) {
-    // TODO: implement getCustomerInvoice
-    throw UnimplementedError();
+      {required int customerId}) async {
+    try {
+      final response = await _dio!.get(
+        'http://192.168.18.46:3000/invoice/customer-invoice/$CustomerInvoice',
+        options: _options,
+      );
+
+      if (response.statusCode == 200) {
+        return Result.success(CustomerInvoice.fromJson(response.data));
+      } else {
+        var baseResponse = BaseResponse.fromJson(response.data);
+        return Result.failed(baseResponse.message);
+      }
+    } on DioException catch (e) {
+      return Result.failed("${e.message}");
+    }
   }
 
   @override
-  Future<Result<ListInvoiceItem>> getInvoiceData({required int invoiceId}) {
-    // TODO: implement getInvoiceData
-    throw UnimplementedError();
+  Future<Result<ListInvoiceItem>> getInvoiceData(
+      {required int invoiceId}) async {
+    try {
+      final response = await _dio!.get(
+        'http://192.168.18.46:3000/invoice/invoice-item/$invoiceId',
+        options: _options,
+      );
+
+      if (response.statusCode == 200) {
+        return Result.success(ListInvoiceItem.fromJson(response.data));
+      } else {
+        var baseResponse = BaseResponse.fromJson(response.data);
+
+        return Result.failed(baseResponse.message);
+      }
+    } on DioException catch (e) {
+      return Result.failed("${e.message}");
+    }
   }
 
   @override
@@ -61,8 +111,26 @@ class MsjInvoiceData implements InvoiceRepository {
 
   @override
   Future<Result<String>> updateInvoiceCustomer(
-      {required int customerId, required int invoiceId}) {
-    // TODO: implement updateInvoiceCustomer
-    throw UnimplementedError();
+      {required int customerId, required int invoiceId}) async {
+    try {
+      final response = await _dio!.put(
+        'http://192.168.18.46:3000/invoice/update-invoice',
+        data: {
+          "customerId": customerId,
+          "invoiceId": invoiceId,
+        },
+        options: _options,
+      );
+
+      var baseResponse = BaseResponse.fromJson(response.data);
+
+      if (response.statusCode == 200) {
+        return Result.success(baseResponse.message);
+      } else {
+        return Result.failed(baseResponse.message);
+      }
+    } on DioException catch (e) {
+      return Result.failed("${e.message}");
+    }
   }
 }

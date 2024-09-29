@@ -1,12 +1,13 @@
 import 'package:mitra_surya_jaya_clean/domain/entities/invoice/customer_invoice.dart';
 import 'package:mitra_surya_jaya_clean/domain/entities/invoice/invoice.dart';
+import 'package:mitra_surya_jaya_clean/domain/entities/invoice/invoice_summary.dart';
 import 'package:mitra_surya_jaya_clean/domain/entities/invoice/list_invoice_item.dart';
 import 'package:mitra_surya_jaya_clean/domain/entities/result.dart';
 
 abstract interface class InvoiceRepository {
   Future<Result<List<Invoice>>> getInvoices();
 
-  Future<Result<String>> addInvoice({
+  Future<Result<InvoiceSummary>> addInvoice({
     required int customerId,
     required String invoiceType,
     required String totalPrice,

@@ -8,7 +8,7 @@ abstract interface class InvoiceRepository {
   Future<Result<List<Invoice>>> getInvoices();
 
   Future<Result<InvoiceSummary>> addInvoice({
-    required int customerId,
+    int? customerId,
     required String invoiceType,
     required String totalPrice,
     required String userId,

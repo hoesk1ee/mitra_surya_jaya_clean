@@ -22,4 +22,10 @@ abstract interface class UserRepository {
     required User user,
     required File imageFile,
   });
+
+  // * Interface to verify account
+  Future<Result<String>> verifyAccount({required String userId});
+
+  // * Interface to get all user
+  Future<Result<List<User>>> getAllUser();
 }

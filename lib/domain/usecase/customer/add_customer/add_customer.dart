@@ -1,6 +1,6 @@
 import 'package:mitra_surya_jaya_clean/data/repositories/customer_repository.dart';
 import 'package:mitra_surya_jaya_clean/domain/entities/result.dart';
-import 'package:mitra_surya_jaya_clean/domain/usecase/add_customer/add_customer_params.dart';
+import 'package:mitra_surya_jaya_clean/domain/usecase/customer/add_customer/add_customer_params.dart';
 import 'package:mitra_surya_jaya_clean/domain/usecase/usecase.dart';
 
 class AddCustomer implements UseCase<Result<String>, AddCustomerParams> {

@@ -1,7 +1,7 @@
 import 'package:mitra_surya_jaya_clean/data/repositories/user_repository.dart';
 import 'package:mitra_surya_jaya_clean/domain/entities/result.dart';
 import 'package:mitra_surya_jaya_clean/domain/usecase/usecase.dart';
-import 'package:mitra_surya_jaya_clean/domain/usecase/user_verification/user_verification_params.dart';
+import 'package:mitra_surya_jaya_clean/domain/usecase/user/user_verification/user_verification_params.dart';
 
 class UserVerification
     implements UseCase<Result<String>, UserVerificationParams> {

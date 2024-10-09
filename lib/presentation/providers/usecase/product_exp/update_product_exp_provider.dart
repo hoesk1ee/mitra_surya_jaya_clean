@@ -1,0 +1,9 @@
+import 'package:mitra_surya_jaya_clean/domain/usecase/product_exp/update_product_exp/update_product_exp.dart';
+import 'package:mitra_surya_jaya_clean/presentation/providers/repositories/product_exp_repository/product_exp_repository_provider.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+part 'update_product_exp_provider.g.dart';
+
+@riverpod
+UpdateProductExp updateProductExp(UpdateProductExpRef ref) => UpdateProductExp(
+    productExpRepository: ref.watch(productExpRepositoryProvider));

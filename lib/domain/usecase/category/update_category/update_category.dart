@@ -4,7 +4,10 @@ import 'package:mitra_surya_jaya_clean/domain/usecase/category/update_category/u
 import 'package:mitra_surya_jaya_clean/domain/usecase/usecase.dart';
 
 class UpdateCategory implements UseCase<Result<String>, UpdateCategoryParams> {
-  late final CategoryRepository _categoryRepository;
+  final CategoryRepository _categoryRepository;
+
+  UpdateCategory({required CategoryRepository categoryRepository})
+      : _categoryRepository = categoryRepository;
 
   @override
   Future<Result<String>> call(UpdateCategoryParams params) async {

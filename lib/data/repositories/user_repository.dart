@@ -7,7 +7,7 @@ abstract interface class UserRepository {
   // * Interface to pass create user
   Future<Result<User>> createUser({
     required String userId,
-    required String photoUrl,
+    String? photoUrl,
     required String userRole,
     required String userName,
     required String phoneNumber,

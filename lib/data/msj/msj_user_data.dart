@@ -23,7 +23,7 @@ class MsjUserData implements UserRepository {
       required String email}) async {
     try {
       final response = await _dio!.post(
-        'http://192.168.18.46:3000/user/create-user',
+        'http://192.168.18.250:3000/user/create-user',
         options: _options,
         data: {
           "userId": userId,
@@ -53,7 +53,7 @@ class MsjUserData implements UserRepository {
   Future<Result<User>> getUser({required String userId}) async {
     try {
       final response = await _dio!.get(
-        'http://192.168.18.46:3000/user/$userId',
+        'http://192.168.18.250:3000/user/$userId',
         options: _options,
       );
 
@@ -82,7 +82,7 @@ class MsjUserData implements UserRepository {
   Future<Result<String>> verifyAccount({required String userId}) async {
     try {
       final response = await _dio!.put(
-        'http://192.168.18.46:3000/user/update-user-verification/$userId',
+        'http://192.168.18.250:3000/user/update-user-verification/$userId',
         options: _options,
       );
 
@@ -102,7 +102,7 @@ class MsjUserData implements UserRepository {
   Future<Result<List<User>>> getAllUser() async {
     try {
       final response = await _dio!.get(
-        'http://192.168.18.46:3000/user',
+        'http://192.168.18.250:3000/user',
         options: _options,
       );
 

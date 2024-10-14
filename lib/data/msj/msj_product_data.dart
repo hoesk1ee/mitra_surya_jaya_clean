@@ -25,7 +25,7 @@ class MsjProductData implements ProductRepository {
       {required int productId, required int categoryId}) async {
     try {
       final response = await _dio!.post(
-        'http://192.168.18.46:3000/product/delete-product/$categoryId/$productId',
+        'http://192.168.18.250:3000/product/delete-product/$categoryId/$productId',
         options: _options,
       );
 
@@ -45,7 +45,7 @@ class MsjProductData implements ProductRepository {
   Future<Result<ProductList>> getAllProducts({required int categoryId}) async {
     try {
       final response = await _dio!.get(
-          'http://192.168.18.46:3000/product/$categoryId',
+          'http://192.168.18.250:3000/product/$categoryId',
           options: _options);
 
       if (response.statusCode == 200) {

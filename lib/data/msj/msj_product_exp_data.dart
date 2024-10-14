@@ -19,7 +19,7 @@ class MsjProductExpData implements ProductExpRepository {
       required String productBarcode}) async {
     try {
       final response = await _dio!.post(
-        'http://192.168.18.46:3000/product-exp/add-produdct-exp',
+        'http://192.168.18.250:3000/product-exp/add-produdct-exp',
         data: {
           "productDetailId": productDetailId,
           "expDate": expDate,
@@ -46,7 +46,7 @@ class MsjProductExpData implements ProductExpRepository {
       {required int productExpId, required String note}) async {
     try {
       final response = await _dio!.post(
-        'http://192.168.18.46:3000/product-exp/delete-product-exp',
+        'http://192.168.18.250:3000/product-exp/delete-product-exp',
         data: {
           "productExpId": productExpId,
           "note": note,
@@ -71,7 +71,7 @@ class MsjProductExpData implements ProductExpRepository {
       {required int productDetailId}) async {
     try {
       final response = await _dio!.get(
-        'http://192.168.18.46:3000/product-exp/add-produdct-exp',
+        'http://192.168.18.250:3000/product-exp/add-produdct-exp',
         options: _options,
       );
 
@@ -92,7 +92,7 @@ class MsjProductExpData implements ProductExpRepository {
       required String note}) async {
     try {
       final response = await _dio!.post(
-        'http://192.168.18.46:3000/product-exp/update-product-exp',
+        'http://192.168.18.250:3000/product-exp/update-product-exp',
         data: {
           "productExpId": productExpId,
           "quantity": quantity,

@@ -19,7 +19,7 @@ class MsjProductDetailData implements ProductDetailRepository {
       required int price}) async {
     try {
       final response = await _dio!
-          .post('http://192.168.18.46:3000/product-detail/add-product-detail',
+          .post('http://192.168.18.250:3000/product-detail/add-product-detail',
               data: {
                 "productId": productId,
                 "productDetailPic": productDetailPic,
@@ -45,7 +45,7 @@ class MsjProductDetailData implements ProductDetailRepository {
       {required int productId, required int productDetailId}) async {
     try {
       final response = await _dio!.put(
-        'http://192.168.18.46:3000/product-detail/delete/$productId/$productDetailId',
+        'http://192.168.18.250:3000/product-detail/delete/$productId/$productDetailId',
         options: _options,
       );
 
@@ -66,7 +66,7 @@ class MsjProductDetailData implements ProductDetailRepository {
       {required int productId}) async {
     try {
       final response = await _dio!.get(
-        'http://192.168.18.46:3000/product-detail/$productId',
+        'http://192.168.18.250:3000/product-detail/$productId',
         options: _options,
       );
 
@@ -89,7 +89,7 @@ class MsjProductDetailData implements ProductDetailRepository {
       int? price}) async {
     try {
       final response = await _dio!.put(
-        'http://192.168.18.46:3000/product-detail/update-product-detail',
+        'http://192.168.18.250:3000/product-detail/update-product-detail',
         data: {
           "productId": productId,
           "productDetailId": productDetailId,

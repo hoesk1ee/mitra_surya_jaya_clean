@@ -17,7 +17,7 @@ class MsjCartData implements CartRepository {
       {required String userId, required String productBarcode}) async {
     try {
       final response = await _dio!.post(
-        'http://192.168.18.46:3000/cart/add-cart',
+        'http://192.168.18.250:3000/cart/add-cart',
         data: {
           "userId": userId,
           "productBarcode": productBarcode,
@@ -42,7 +42,7 @@ class MsjCartData implements CartRepository {
       {required String userId, required int productExpId}) async {
     try {
       final response = await _dio!.delete(
-        'http://192.168.18.46:3000/cart/delete-cart/$userId/$productExpId',
+        'http://192.168.18.250:3000/cart/delete-cart/$userId/$productExpId',
         options: _options,
       );
 
@@ -60,7 +60,7 @@ class MsjCartData implements CartRepository {
   Future<Result<CartList>> getCartItem({required String userId}) async {
     try {
       final response = await _dio!.get(
-        'http://192.168.18.46:3000/cart/$userId',
+        'http://192.168.18.250:3000/cart/$userId',
         options: _options,
       );
 
@@ -81,7 +81,7 @@ class MsjCartData implements CartRepository {
       required int quantity}) async {
     try {
       final response = await _dio!.put(
-        'http://192.168.18.46:3000',
+        'http://192.168.18.250:3000',
         options: _options,
         data: {
           "userId": userId,

@@ -4,9 +4,11 @@ import 'package:mitra_surya_jaya_clean/domain/entities/user/user.dart';
 import 'package:mitra_surya_jaya_clean/domain/usecase/authentication/login/login.dart';
 import 'package:mitra_surya_jaya_clean/domain/usecase/authentication/logout/logout.dart';
 import 'package:mitra_surya_jaya_clean/domain/usecase/user/get_logged_in_user/get_logged_in_user.dart';
+import 'package:mitra_surya_jaya_clean/domain/usecase/user/get_users/get_all_user.dart';
 import 'package:mitra_surya_jaya_clean/presentation/providers/usecase/authentication/login_provider.dart';
 import 'package:mitra_surya_jaya_clean/presentation/providers/usecase/authentication/logout_provider.dart';
 import 'package:mitra_surya_jaya_clean/presentation/providers/usecase/user/get_logged_in_user_provider.dart';
+import 'package:mitra_surya_jaya_clean/presentation/providers/usecase/user/get_users_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'user_data_provider.g.dart';
@@ -38,7 +40,6 @@ class UserData extends _$UserData {
     switch (result) {
       case Success(value: final user):
         state = AsyncData(user);
-        print(user);
 
       case Failed(:final message):
         state = AsyncError(FlutterError(message), StackTrace.current);
@@ -58,5 +59,16 @@ class UserData extends _$UserData {
         state = AsyncError(FlutterError(message), StackTrace.current);
         state = AsyncData(state.valueOrNull);
     }
+  }
+
+  Future<List<User>> getUsers() async {
+    GetAllUser getAllUser = ref.read(getAllUserProvider);
+
+    var result = await getAllUser(null);
+
+    return switch (result) {
+      Success(value: final users) => users,
+      Failed(message: _) => const [],
+    };
   }
 }

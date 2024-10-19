@@ -1,7 +1,13 @@
 import 'package:flutter/widgets.dart';
 import 'package:mitra_surya_jaya_clean/domain/entities/category/category.dart';
 import 'package:mitra_surya_jaya_clean/domain/entities/result.dart';
+import 'package:mitra_surya_jaya_clean/domain/usecase/category/add_category.dart/add_category.dart';
+import 'package:mitra_surya_jaya_clean/domain/usecase/category/add_category.dart/add_category_params.dart';
+import 'package:mitra_surya_jaya_clean/domain/usecase/category/delete_category/delete_category.dart';
+import 'package:mitra_surya_jaya_clean/domain/usecase/category/delete_category/delete_category_params.dart';
 import 'package:mitra_surya_jaya_clean/domain/usecase/category/get_categories/get_categories.dart';
+import 'package:mitra_surya_jaya_clean/presentation/providers/usecase/category/add_category_provider.dart';
+import 'package:mitra_surya_jaya_clean/presentation/providers/usecase/category/delete_category_provider.dart';
 import 'package:mitra_surya_jaya_clean/presentation/providers/usecase/category/get_categories_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -22,6 +28,45 @@ class CategoryData extends _$CategoryData {
     switch (result) {
       case Success(value: final categories):
         state = AsyncData(categories);
+      case Failed(message: _):
+        state = const AsyncData([]);
+    }
+  }
+
+  Future<void> addCategory({
+    required String categoryPic,
+    required String categoryName,
+  }) async {
+    state = const AsyncLoading();
+
+    AddCategory addCategory = ref.read(addCategoryProvider);
+
+    var result = addCategory(
+      AddCategoryParams(
+        categoryPic: categoryPic,
+        categoryName: categoryName,
+      ),
+    );
+
+    switch (result) {
+      case Success(value: _):
+        getCategories();
+      case Failed(:final message):
+        state = AsyncError(FlutterError(message), StackTrace.current);
+    }
+  }
+
+  Future<void> deleteCategory({required int categoryId}) async {
+    state = const AsyncLoading();
+
+    DeleteCategory deleteCategory = ref.read(deleteCategoryProvider);
+
+    var result =
+        await deleteCategory(DeleteCategoryParams(categoryId: categoryId));
+
+    switch (result) {
+      case Success(value: _):
+        await getCategories();
       case Failed(:final message):
         state = AsyncError(FlutterError(message), StackTrace.current);
     }

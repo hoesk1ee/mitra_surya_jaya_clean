@@ -4,14 +4,9 @@ import 'package:mitra_surya_jaya_clean/domain/entities/user/user.dart';
 import 'package:mitra_surya_jaya_clean/domain/usecase/authentication/login/login.dart';
 import 'package:mitra_surya_jaya_clean/domain/usecase/authentication/logout/logout.dart';
 import 'package:mitra_surya_jaya_clean/domain/usecase/user/get_logged_in_user/get_logged_in_user.dart';
-import 'package:mitra_surya_jaya_clean/domain/usecase/user/get_users/get_all_user.dart';
-import 'package:mitra_surya_jaya_clean/domain/usecase/user/user_verification/user_verification.dart';
-import 'package:mitra_surya_jaya_clean/domain/usecase/user/user_verification/user_verification_params.dart';
 import 'package:mitra_surya_jaya_clean/presentation/providers/usecase/authentication/login_provider.dart';
 import 'package:mitra_surya_jaya_clean/presentation/providers/usecase/authentication/logout_provider.dart';
 import 'package:mitra_surya_jaya_clean/presentation/providers/usecase/user/get_logged_in_user_provider.dart';
-import 'package:mitra_surya_jaya_clean/presentation/providers/usecase/user/get_users_provider.dart';
-import 'package:mitra_surya_jaya_clean/presentation/providers/usecase/user/user_verification_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'user_data_provider.g.dart';

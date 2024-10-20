@@ -4,6 +4,7 @@ import 'package:mitra_surya_jaya_clean/domain/entities/user/user.dart';
 import 'package:mitra_surya_jaya_clean/domain/usecase/authentication/login/login.dart';
 import 'package:mitra_surya_jaya_clean/domain/usecase/authentication/logout/logout.dart';
 import 'package:mitra_surya_jaya_clean/domain/usecase/user/get_logged_in_user/get_logged_in_user.dart';
+import 'package:mitra_surya_jaya_clean/presentation/providers/category_data/category_data_provider.dart';
 import 'package:mitra_surya_jaya_clean/presentation/providers/usecase/authentication/login_provider.dart';
 import 'package:mitra_surya_jaya_clean/presentation/providers/usecase/authentication/logout_provider.dart';
 import 'package:mitra_surya_jaya_clean/presentation/providers/usecase/user/get_logged_in_user_provider.dart';
@@ -21,6 +22,7 @@ class UserData extends _$UserData {
 
     switch (userResult) {
       case Success(value: final user):
+        await ref.read(categoryDataProvider.notifier).getCategories();
         return user;
 
       case Failed(message: _):

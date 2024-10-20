@@ -23,7 +23,7 @@ class MsjInvoiceData implements InvoiceRepository {
       required String note}) async {
     try {
       final response = await _dio!.post(
-        'http://192.168.18.250:3000/add-invoice',
+        'http://192.168.18.253:3000/add-invoice',
         data: {
           "customerId": customerId,
           "invoiceType": invoiceType,
@@ -51,7 +51,7 @@ class MsjInvoiceData implements InvoiceRepository {
       {required int customerId}) async {
     try {
       final response = await _dio!.get(
-        'http://192.168.18.250:3000/invoice/customer-invoice/$CustomerInvoice',
+        'http://192.168.18.253:3000/invoice/customer-invoice/$CustomerInvoice',
         options: _options,
       );
 
@@ -71,7 +71,7 @@ class MsjInvoiceData implements InvoiceRepository {
       {required int invoiceId}) async {
     try {
       final response = await _dio!.get(
-        'http://192.168.18.250:3000/invoice/invoice-item/$invoiceId',
+        'http://192.168.18.253:3000/invoice/invoice-item/$invoiceId',
         options: _options,
       );
 
@@ -91,7 +91,7 @@ class MsjInvoiceData implements InvoiceRepository {
   Future<Result<List<Invoice>>> getInvoices() async {
     try {
       final response = await _dio!.get(
-        'http:192.168.18.250:3000/invoice',
+        'http:192.168.18.253:3000/invoice',
         options: _options,
       );
 
@@ -114,7 +114,7 @@ class MsjInvoiceData implements InvoiceRepository {
       {required int customerId, required int invoiceId}) async {
     try {
       final response = await _dio!.put(
-        'http://192.168.18.250:3000/invoice/update-invoice',
+        'http://192.168.18.253:3000/invoice/update-invoice',
         data: {
           "customerId": customerId,
           "invoiceId": invoiceId,

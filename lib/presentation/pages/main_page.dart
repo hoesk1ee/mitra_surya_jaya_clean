@@ -37,6 +37,11 @@ class MainPage extends ConsumerWidget {
               },
               child: Text("Logout"),
             ),
+            ElevatedButton(
+                onPressed: () {
+                  ref.read(routerProvider).goNamed('product');
+                },
+                child: Text("Go to Product Page"))
           ],
         ),
       ),

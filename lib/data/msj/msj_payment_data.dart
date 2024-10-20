@@ -18,7 +18,7 @@ class MsjPaymentData implements PaymentRepository {
       required int amountPaid}) async {
     try {
       final response = await _dio!.post(
-        'http://192.168.18.250:3000/payment/add-timeline',
+        'http://192.168.18.253:3000/payment/add-timeline',
         data: {
           "invoiceId": invoiceId,
           "note": note,
@@ -43,7 +43,7 @@ class MsjPaymentData implements PaymentRepository {
   Future<Result<Payment>> getPayment({required int invoiceId}) async {
     try {
       final response = await _dio!.post(
-        'http://192.168.18.250:3000/payment/$invoiceId',
+        'http://192.168.18.253:3000/payment/$invoiceId',
         options: _options,
       );
 
@@ -61,7 +61,7 @@ class MsjPaymentData implements PaymentRepository {
   Future<Result<String>> verifyPayment({required int paymentId}) async {
     try {
       final response = await _dio!.post(
-        'http://192.168.18.250:3000/payment/update-payment',
+        'http://192.168.18.253:3000/payment/update-payment',
         data: {
           "paymentId": paymentId,
         },

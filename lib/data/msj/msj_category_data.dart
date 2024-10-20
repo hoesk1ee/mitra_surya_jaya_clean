@@ -22,7 +22,7 @@ class MsjCategoryData implements CategoryRepository {
   Future<Result<String>> deleteCategory({required int cateogryId}) async {
     try {
       final response = await _dio!.post(
-          'http://192.168.18.250:3000/category/delete-category/$cateogryId',
+          'http://192.168.18.253:3000/category/delete-category/$cateogryId',
           options: _options);
 
       if (response.statusCode == 200) {
@@ -39,10 +39,11 @@ class MsjCategoryData implements CategoryRepository {
   Future<Result<List<Category>>> getAllCategories() async {
     try {
       final response = await _dio!
-          .get('http://192.168.18.250:3000/category', options: _options);
+          .get('http://192.168.18.253:3000/category', options: _options);
 
       if (response.statusCode == 200) {
-        var result = List<Map<String, dynamic>>.from(response.data);
+        var result =
+            List<Map<String, dynamic>>.from(response.data['categories']);
 
         return Result.success(result.map((e) => Category.fromJson(e)).toList());
       } else {

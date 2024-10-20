@@ -18,7 +18,7 @@ class MsjCustomerData implements CustomerRepository {
       required String customerAddress}) async {
     try {
       final response = await _dio!.post(
-        "http://192.168.18.250:3000/customer/add-customer",
+        "http://192.168.18.253:3000/customer/add-customer",
         data: {
           "customerName": customerName,
           "customerPhone": customerPhone,
@@ -43,7 +43,7 @@ class MsjCustomerData implements CustomerRepository {
   Future<Result<List<Customer>>> getAllCustomer() async {
     try {
       final response = await _dio!.get(
-        'http://192.168.18.250:3000/customer',
+        'http://192.168.18.253:3000/customer',
         options: _options,
       );
 
@@ -66,7 +66,7 @@ class MsjCustomerData implements CustomerRepository {
   Future<Result<Customer>> getCustomerById({required int customerId}) async {
     try {
       final response = await _dio!.get(
-        'http://192.168.18.250:3000/customer/$customerId',
+        'http://192.168.18.253:3000/customer/$customerId',
         options: _options,
       );
 
@@ -90,7 +90,7 @@ class MsjCustomerData implements CustomerRepository {
       String? customerAddress}) async {
     try {
       final response = await _dio!.put(
-        'http://192.168.18.250:3000/customer/update-customer',
+        'http://192.168.18.253:3000/customer/update-customer',
         data: {
           "customerId": customerId,
           "customerName": customerName,

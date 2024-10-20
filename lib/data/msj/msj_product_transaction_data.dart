@@ -14,7 +14,7 @@ class MsjProductTransactionData implements ProductTransactionRepository {
       {required int productExpId}) async {
     try {
       final response = await _dio!.get(
-        "http://192.168.18.250:3000/product-transaction/get-product-transaction-list/$productExpId",
+        "http://192.168.18.253:3000/product-transaction/get-product-transaction-list/$productExpId",
         options: Options(
           contentType: 'application/json',
         ),

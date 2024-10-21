@@ -7,6 +7,6 @@ class UpdateProductParams {
   const UpdateProductParams(
       {required this.categoryId,
       required this.productId,
-      required this.productPic,
-      required this.productName});
+      this.productPic,
+      this.productName});
 }

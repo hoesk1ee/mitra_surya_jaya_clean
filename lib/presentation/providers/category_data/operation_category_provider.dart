@@ -6,7 +6,7 @@ import 'package:mitra_surya_jaya_clean/domain/usecase/category/add_category.dart
 import 'package:mitra_surya_jaya_clean/domain/usecase/category/add_category.dart/add_category_params.dart';
 import 'package:mitra_surya_jaya_clean/domain/usecase/category/delete_category/delete_category.dart';
 import 'package:mitra_surya_jaya_clean/domain/usecase/category/delete_category/delete_category_params.dart';
-import 'package:mitra_surya_jaya_clean/presentation/providers/category/category_data_provider.dart';
+import 'package:mitra_surya_jaya_clean/presentation/providers/category_data/category_data_provider.dart';
 import 'package:mitra_surya_jaya_clean/presentation/providers/usecase/category/add_category_provider.dart';
 import 'package:mitra_surya_jaya_clean/presentation/providers/usecase/category/delete_category_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';

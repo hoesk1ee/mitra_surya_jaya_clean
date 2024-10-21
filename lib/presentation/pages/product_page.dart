@@ -5,7 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mitra_surya_jaya_clean/domain/entities/category/category.dart';
 import 'package:mitra_surya_jaya_clean/domain/entities/product/product_list.dart';
 import 'package:mitra_surya_jaya_clean/domain/usecase/category/get_categories/get_categories.dart';
-import 'package:mitra_surya_jaya_clean/presentation/providers/category/category_data_provider.dart';
+import 'package:mitra_surya_jaya_clean/presentation/providers/category_data/category_data_provider.dart';
 import 'package:mitra_surya_jaya_clean/presentation/providers/repositories/category_repository/category_repository_provider.dart';
 import 'package:mitra_surya_jaya_clean/presentation/providers/usecase/category/get_categories_provider.dart';
 
